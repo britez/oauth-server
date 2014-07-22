@@ -1,4 +1,9 @@
-This is your new Play application
-=================================
+<h1>OAuth Server</h1>
 
-This file will be packaged with your application, when using `activator dist`.
+<h2>Client</h2>
+<h2>Authorize</h2>
+<b>/oauth2/authorize</b>
+<h2>Token</h2>
+<b>/oauth2/token</b>
+<h2>Revoke</h2>
+<b>/oauth2/revoke</b>
