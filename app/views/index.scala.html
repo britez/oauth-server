@@ -2,4 +2,33 @@
 	<div class="page-header">
   		<h1>OAuth2 Server <small>authorization server</small></h1>
 	</div>
+	<div class="container">
+		@if(flash.get("message")){
+		<div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+        	<strong>OK!</strong> @flash.get("message")
+        </div>
+        }
+		<form class="large-form" action="/application" method="post">
+			<h3>Create Application</h3>
+			<div class="control-group">
+  				<label class="control-label" for="name">Name</label>
+				<div class="controls">
+   					<input type="text" id="name" placeholder="Awesome application">
+ 				</div>
+			</div>
+			<div class="control-group">
+   				<label class="control-label" for="description">Description</label>
+   				<div class="controls">
+   					<input type="text" id="desciption" placeholder="The awesome application descrtiption">
+   				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+  					<input type="submit" class="btn btn-large btn-block btn-primary" value="Create!"/>
+					<input type="submit" class="btn btn-large btn-block" value="Cancel"/>
+				</div>
+			</div>
+		</form>
+	</div>
 }
