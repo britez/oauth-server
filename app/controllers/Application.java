@@ -3,7 +3,7 @@ package controllers;
 import play.mvc.*;
 import play.data.*;
 
-import views.html.*;
+import views.html.application.*;
 
 public class Application extends Controller {
 
@@ -12,9 +12,14 @@ public class Application extends Controller {
     }
     
     public static Result create() {
-    	Form.form(models.Application.class).bindFromRequest().get().save();
+    	getApplicationForm().save();
     	flash("message","Application created successfuly");
-    	return ok(index.render());
+    	return redirect(routes.Application.index());
+    }
+    
+    private static models.Application getApplicationForm(){
+    	Form<models.Application> appForm = Form.form(models.Application.class).bindFromRequest();
+    	return appForm.get();
     }
 
 }
